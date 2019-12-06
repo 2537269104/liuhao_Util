@@ -1,5 +1,6 @@
 package com.liuhao.util;
 
+import java.text.DateFormat;
 import java.text.ParseException;
 import java.text.SimpleDateFormat;
 import java.util.Calendar;
@@ -17,7 +18,7 @@ import java.util.Locale;
 public class DateUtil {
 
 	private static SimpleDateFormat sdf = new SimpleDateFormat("yyyy-MM-dd");
-
+    private static SimpleDateFormat sdf2 = new SimpleDateFormat("yyyy-MM-dd HH:mm:ss");
 	/**
 	 * 
 	 * @Title: getAge @Description: 根据 日期算年龄 @param birthdayDate @param 设定文件 @return
@@ -117,6 +118,7 @@ public class DateUtil {
 	 * date1 @param @return 设定文件 @return boolean 返回类型 @throws
 	 */
 	public static boolean isThisWeekOfDate(Date date1) {
+		
 		// 获取日历
 		Calendar firstDayOfWeek = Calendar.getInstance(Locale.getDefault());
 		
@@ -128,13 +130,12 @@ public class DateUtil {
 		
 		// Calendar.DATE 当前是星期几 add(a,b) a的日历时间-b的天数
 		firstDayOfWeek.add(Calendar.DATE, -day+1+1);// 后面的+1是因为从周日开始
-		System.out.println("当前是星期" + Calendar.DATE);
+		//System.out.println("当前是星期" + Calendar.DATE);
 		
-		System.out.println(firstDayOfWeek.getFirstDayOfWeek() + "============" + day);
+		//System.out.println(firstDayOfWeek.getFirstDayOfWeek() + "============" + day);
 		// 本周的周一
-		System.out.println(sdf.format(firstDayOfWeek.getTime()));
+	//	System.out.println(sdf2.format(firstDayOfWeek.getTime()));
 
-		
 		// 获取日历
 		Calendar lastDayOfWeek = Calendar.getInstance(Locale.getDefault());
 		// 给日历
@@ -144,12 +145,21 @@ public class DateUtil {
 
 		lastDayOfWeek.add(Calendar.DATE, 7 - day2 + 1);// 后面的+1是因为从周日开始
 
-		System.out.println(lastDayOfWeek.getFirstDayOfWeek() + "============" + day2);
+		//System.out.println(lastDayOfWeek.getFirstDayOfWeek() + "============" + day2);
 		// 本周的周一
-		System.out.println(sdf.format(lastDayOfWeek.getTime()));
+		//System.out.println(sdf2.format(lastDayOfWeek.getTime()));
+      
+		
+		boolean a =date1.getTime()<lastDayOfWeek.getTime().getTime();
+		/*
+		 * System.out.println("本周最后一天的毫秒值："+lastDayOfWeek.getTime().getTime());
+		 * System.out.println("本周第一天的毫秒值："+firstDayOfWeek.getTime().getTime());
+		 * System.out.println("给定时间的毫秒值："+date1.getTime());
+		 */
+        boolean b =(date1.getTime()>firstDayOfWeek.getTime().getTime());
 
-		return (date1.getTime()<lastDayOfWeek.getTime().getTime())&&(date1.getTime()>firstDayOfWeek.getTime().getTime());
-	}
+		return a&&b;
+		}
 
 	public static void main(String[] args) throws ParseException {
 
@@ -162,6 +172,6 @@ public class DateUtil {
 		 * } catch (ParseException e) { // TODO Auto-generated catch block
 		 * e.printStackTrace(); }
 		 */
-		System.out.println(isThisWeekOfDate(sdf.parse("2019-12-03")));
+		System.out.println(isThisWeekOfDate(sdf2.parse("2019-12-02 13:18:00")));
 	}
 }
