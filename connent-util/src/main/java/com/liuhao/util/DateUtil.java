@@ -114,8 +114,12 @@ public class DateUtil {
 
 	/**
 	 * 
-	 * @Title: isThisWeekOfDate @Description: 判断给定的时间是否在本周之中 @param @param
-	 * date1 @param @return 设定文件 @return boolean 返回类型 @throws
+	 * @Title: isThisWeekOfDate 
+	 * @Description: 判断给定的时间是否在本周之中 
+	 * @param @param date1 
+	 * @param @return 设定文件
+	 *  @return boolean
+	 *  返回类型 @throws
 	 */
 	public static boolean isThisWeekOfDate(Date date1) {
 		
@@ -160,7 +164,114 @@ public class DateUtil {
 
 		return a&&b;
 		}
-
+        /**
+         * 
+         * @Title: isThisMonthOfDate 
+         * @Description: TODO判断改时间是否处于本月当中
+         * @param @param date1
+         * @param @return    设定文件 
+         * @return boolean    返回类型 
+         * @throws
+         */
+	    public static boolean isThisMonthOfDate(Date date1) {
+              
+	    	
+	    	Calendar calendar = Calendar.getInstance();
+	    	
+	    	int monthNow = calendar.get(Calendar.MONTH);
+	    	
+	    	int yearNow = calendar.get(Calendar.YEAR);
+	    	
+	    	calendar.setTime(date1);
+            
+	    	int monthDate1 = calendar.get(Calendar.MONTH);
+	    	
+	    	int yearDate1 = calendar.get(Calendar.YEAR);
+	    	//如果传入的时间与本地时间的年份相同,则判断两个时间的月份
+	    	if(yearDate1 ==yearNow) {
+	    		if(monthDate1==monthNow) {
+	    			return true;
+	    		}
+	    	}
+	    	
+	    	return false;	    	
+	    }
+	
+	/**
+	 * 
+	 * @Title: getFirstDayDateOfThisMonth 
+	 * @Description: 给定时间对象，初始化到该月初的1月1日0时0分0秒0毫秒
+	 * @param     设定文件 
+	 * @return void    返回类型 
+	 * @throws
+	 */
+	public static Date getFirstDayDateOfThisMonth(Date date1) {
+		
+		SimpleDateFormat sdf3 = new SimpleDateFormat("yyyy-MM-01 00:00:00");
+		
+		String firstDayDateOfThisMonth = sdf3.format(date1);
+		
+		System.out.println("该时间初始化为 ："+firstDayDateOfThisMonth);
+		
+		
+		try {
+			return sdf2.parse(firstDayDateOfThisMonth);
+		} catch (ParseException e) {
+			// TODO Auto-generated catch block
+			e.printStackTrace();
+		}
+		return null;
+	}
+	    /**
+	     * 
+	     * @Title: getLastDayDateOfThisMonth 
+	     * @Description: 给定时间对象，设定到该月最一天的23时59分59秒999毫秒
+	     * @param @param date1
+	     * @param @return    设定文件 
+	     * @return Date    返回类型 
+	     * @throws
+	     */
+     public static Date getLastDayDateOfThisMonth(Date date1) {
+		
+		Calendar calendar = Calendar.getInstance();
+		
+		
+	     calendar.setTime(date1); 
+	     
+	     Date firstDayDateOfThisMonth = getFirstDayDateOfThisMonth(calendar.getTime());
+		 calendar.setTime(firstDayDateOfThisMonth);
+		 calendar.add(Calendar.MONTH, 1);
+		 calendar.add(Calendar.MILLISECOND, -1);
+		return calendar.getTime();
+	}
+	/**
+	 * 
+	 * @Title: compareOfDate 
+	 * @Description:0-相等          1- date1大于date2          -1 date1小于date2
+	 * @param @param date1
+	 * @param @param date2
+	 * @param @return    设定文件 
+	 * @return int    返回类型 
+	 * @throws
+	 */
+	public static int compareOfDate(Date date1 ,Date date2) {
+		
+		long time1 = date1.getTime();
+		long time2 = date2.getTime();
+		if(time1 == time2) {
+			return 0;
+		}
+		else if(time1>time2) {
+			return 1;
+		}
+		else {
+			return -1;
+		}
+		
+	}
+     
+     
+     
 	public static void main(String[] args) throws ParseException {
 
 		/*
@@ -172,6 +283,16 @@ public class DateUtil {
 		 * } catch (ParseException e) { // TODO Auto-generated catch block
 		 * e.printStackTrace(); }
 		 */
-		System.out.println(isThisWeekOfDate(sdf2.parse("2019-12-02 13:18:00")));
+		//System.out.println(isThisWeekOfDate(sdf2.parse("2019-12-02 13:18:00")));
+	
+	
+	     System.out.println(isThisMonthOfDate(sdf.parse("2019-11-06")));
+	
+	
+	      // getFirstDayDateOfThisMonth(sdf2.parse("2019-12-02 13:18:00"));
+	
+	       Date lastDayDateOfThisMonth = getLastDayDateOfThisMonth(sdf2.parse("2019-12-04 19:18:00"));
+	       System.out.println(sdf2.format(lastDayDateOfThisMonth));
+	
 	}
 }
