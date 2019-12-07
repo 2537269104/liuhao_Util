@@ -253,6 +253,7 @@ public class DateUtil {
 	 * @param @return    设定文件 
 	 * @return int    返回类型 
 	 * @throws
+	 * 
 	 */
 	public static int compareOfDate(Date date1 ,Date date2) {
 		

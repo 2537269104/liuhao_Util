@@ -78,6 +78,7 @@ public class FileUtil {
 	 * @param @return    设定文件 
 	 * @return String    返回类型 
 	 * @throws
+	 * 
 	 */
 	public static String  getFileSize(File file) {
 		

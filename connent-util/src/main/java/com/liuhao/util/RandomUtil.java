@@ -40,6 +40,7 @@ public class RandomUtil {
 	 * @param @return    设定文件 
 	 * @return int[]    返回类型 
 	 * @throws
+	 * 
 	 */
 public static int[] random(int min,int max,int count) {
 		

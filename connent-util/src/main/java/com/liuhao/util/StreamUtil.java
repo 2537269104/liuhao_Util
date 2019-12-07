@@ -17,6 +17,7 @@ public class StreamUtil {
 
 	/**
 	 * 
+	 * 
 	 * @Title: closeStream 
 	 * @Description: 关流
 	 * @param @param autoCloseables    设定文件 
