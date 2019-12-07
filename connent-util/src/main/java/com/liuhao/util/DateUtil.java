@@ -270,29 +270,4 @@ public class DateUtil {
 		
 	}
      
-     
-     
-	public static void main(String[] args) throws ParseException {
-
-		/*
-		 * try {
-		 * 
-		 * System.out.println(getDateOfStartAndEnd(new Date(),
-		 * sdf.parse("2019-12-05")));
-		 * 
-		 * } catch (ParseException e) { // TODO Auto-generated catch block
-		 * e.printStackTrace(); }
-		 */
-		//System.out.println(isThisWeekOfDate(sdf2.parse("2019-12-02 13:18:00")));
-	
-	
-	     System.out.println(isThisMonthOfDate(sdf.parse("2019-11-06")));
-	
-	
-	      // getFirstDayDateOfThisMonth(sdf2.parse("2019-12-02 13:18:00"));
-	
-	       Date lastDayDateOfThisMonth = getLastDayDateOfThisMonth(sdf2.parse("2019-12-04 19:18:00"));
-	       System.out.println(sdf2.format(lastDayDateOfThisMonth));
-	
-	}
 }

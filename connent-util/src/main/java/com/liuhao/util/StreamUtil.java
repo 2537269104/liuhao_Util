@@ -172,18 +172,4 @@ public class StreamUtil {
 		 
 	 }
 	
-	public static void main(String[] args) {
-		
-		//String readTextFile = readTextFile(new File("C:\\Users\\25372\\Desktop\\hello.txt"));
-		//System.out.println(readTextFile);
-	
-//	     List<String> list = readTextFileByLine(new File("C:\\Users\\25372\\Desktop\\hello.txt"));
-//	     
-//	     for (String str : list) {
-//			System.out.println(str);
-//		}
-		String readTextFile = readTextFile(new File("C:\\Users\\25372\\Desktop\\hello.txt"));
-		System.out.println(readTextFile);
-	      writeFileContext("aaaaaaaaaa", new File("C:\\Users\\25372\\Desktop\\hello2.txt"), true);
-	}
 }

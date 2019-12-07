@@ -92,12 +92,4 @@ public class FileUtil {
 		return df.format(i)+"kb";
 	}
 	
-	public static void main(String[] args) {
-		
-		
-		//deleteFile("C:\\Users\\25372\\Desktop\\test");
-	     System.out.println(getSystemUserHome());
-	
-	    System.out.println(getFileSize(new File("C:\\Users\\25372\\Desktop\\大数据（CMS）-第6单元（技能）.doc")));
-	}
 }

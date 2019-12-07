@@ -56,17 +56,4 @@ public static int[] random(int min,int max,int count) {
 	
 	
 	
-	public static void main(String[] args) {
-		
-		for(int i=0 ; i<=100;i++) {
-			int a = random(1, 32);
-			
-			System.out.println(a);
-		}
-		
-//		int[] random = random(0, 100, 100);
-//		for (int i=0;i<random.length ;i++) {
-//			System.out.println(random[i]);
-//		}
-	}
 }

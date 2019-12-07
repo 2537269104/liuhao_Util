@@ -128,22 +128,4 @@ public class SpringUtil {
 	 * @throws
 	 */
 	
-	public static void main(String[] args) {
-		
-		//测试
-		/*
-		 * boolean blank = isBlank(" "); 
-		 * System.out.println(blank);
-		 */
-//		boolean b = isPhoneNum("13753361924");
-//		System.out.println(b);
-		
-		/* boolean b = isEnglishLetter("AAAAAqqBBBBBBBcom"); */
-		
-		//String random = getRandomsEnglishString(10);
-		
-		String str = getStrOfLetterAndNumber(10);
-		System.out.println(str);
-	}
-	
 }
