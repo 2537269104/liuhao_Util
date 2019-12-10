@@ -97,7 +97,7 @@ public class StreamUtil {
 			  //接着读显然会少一个字符因为你read方法读过一个字符游标就会移动一下
 			while((str=br.readLine())!=null) {
 				list.add(str);
-				list.add("\r\n");
+				
 			}
 			
 			

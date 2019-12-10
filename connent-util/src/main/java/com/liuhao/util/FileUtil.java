@@ -68,6 +68,20 @@ public class FileUtil {
 		
 		return System.getProperty("user.home");
 	}
+	/**
+	 * 
+	 * @Title: getSystemTempDirectory 
+	 * @Description: TODO获取当前系统的临时目录 
+	 * @param @return    设定文件 
+	 * @return String    返回类型 
+	 * @throws
+	 */
+	public static String getSystemTempDirectory() {
+		
+		
+		return System.getProperty("java.io.tmpdir");
+	}
+	
 	
 	
 	/**
@@ -93,4 +107,8 @@ public class FileUtil {
 		return df.format(i)+"kb";
 	}
 	
+	
+	public static void main(String[] args) {
+		System.out.println(getSystemTempDirectory());
+	}
 }
