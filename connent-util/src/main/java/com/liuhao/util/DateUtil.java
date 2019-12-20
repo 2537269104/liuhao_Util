@@ -19,6 +19,20 @@ public class DateUtil {
 
 	private static SimpleDateFormat sdf = new SimpleDateFormat("yyyy-MM-dd");
     private static SimpleDateFormat sdf2 = new SimpleDateFormat("yyyy-MM-dd HH:mm:ss");
+    private static SimpleDateFormat dateFormat = new SimpleDateFormat("yyyy-MM-dd");
+
+	/**
+	 * @Title: format   
+	 * @Description: 时间格式化  
+	 * @param: @param theDate
+	 * @param: @return      
+	 * @return: String      
+	 * @throws
+	 */
+	public static String format(Date theDate) {
+		return sdf.format(theDate);
+	}
+
 	/**
 	 * 
 	 * @Title: getAge @Description: 根据 日期算年龄 @param birthdayDate @param 设定文件 @return
